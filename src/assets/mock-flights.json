@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "airline": "Air India",
+    "number": "AI101",
+    "price": 150,
+    "duration": 120,
+    "departure": "06:00"
+  },
+  {
+    "id": 2,
+    "airline": "IndiGo",
+    "number": "6E202",
+    "price": 100,
+    "duration": 110,
+    "departure": "09:30"
+  },
+  {
+    "id": 3,
+    "airline": "SpiceJet",
+    "number": "SG303",
+    "price": 120,
+    "duration": 130,
+    "departure": "14:00"
+  }
+]
