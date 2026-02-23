@@ -1,1 +1,38 @@
-<p>booking-form works!</p>
+<div class="booking-page">
+  <mat-card class="booking-card">
+
+    <h2 class="title">Passenger Details</h2>
+
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
+      <div class="row">
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Full Name</mat-label>
+          <input matInput placeholder="Full Name" formControlName="fullName">
+          @if(bookingForm.get('fullName')?.hasError('required')) {
+          <mat-error >Name required</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email">
+          @if(bookingForm.get('email')?.hasError('email')) {
+          <mat-error>Invalid email</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Contact Number</mat-label>
+          <input matInput placeholder="Contact Number" formControlName="phone">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>No. of Passengers</mat-label>
+          <input matInput type="number" placeholder="No. of Passengers" formControlName="passengers">
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" type="submit" class="submit-btn" [disabled]="bookingForm.invalid">Book</button>
+    
+  </form>
+
+  </mat-card>
+</div>
