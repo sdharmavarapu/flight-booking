@@ -1,7 +1,6 @@
-/* full height layout */
-.results-layout {
+.results-page {
   display: flex;
-  height: calc(100vh - 64px); /* subtract toolbar height */
+  height: calc(100vh - 64px);
   gap: 16px;
   padding: 16px;
   background: #f5f7fb;
@@ -14,9 +13,9 @@
 }
 
 .results {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 12px;
   overflow-y: auto; 
   padding: 0 8px;
