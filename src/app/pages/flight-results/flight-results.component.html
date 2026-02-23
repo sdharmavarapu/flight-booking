@@ -1,1 +1,36 @@
-<p>flight-results works!</p>
+<div class="results-layout">
+
+  <aside class="sidebar">
+    <app-filter-sidebar
+      [airlines]="airlines"
+      [timeSlots]="timeSlots"
+      (filtersChanged)="onFiltersChanged($event)"
+    />
+  </aside>
+
+  <section class="results">
+    <div class="results-header">
+      <h4>Available Flights</h4>
+
+      <mat-form-field appearance="outline" class="sort-field">
+        <mat-label>Sort by</mat-label>
+        <mat-select
+          [value]="sortOption()"
+          (selectionChange)="onSortChange($event.value)">
+          <mat-option value="">None</mat-option>
+          <mat-option value="price">Price</mat-option>
+          <mat-option value="duration">Duration</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    @if (filteredFlights().length === 0) {
+      <div class="empty-state">No flights found</div>
+    }
+
+    @for (flight of filteredFlights(); track flight.id) {
+      <app-flight-card [flight]="flight" />
+    }
+  </section>
+
+</div>

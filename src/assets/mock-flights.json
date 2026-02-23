@@ -1,26 +1,12 @@
 [
-  {
-    "id": 1,
-    "airline": "Air India",
-    "number": "AI101",
-    "price": 150,
-    "duration": 120,
-    "departure": "06:00"
-  },
-  {
-    "id": 2,
-    "airline": "IndiGo",
-    "number": "6E202",
-    "price": 100,
-    "duration": 110,
-    "departure": "09:30"
-  },
-  {
-    "id": 3,
-    "airline": "SpiceJet",
-    "number": "SG303",
-    "price": 120,
-    "duration": 130,
-    "departure": "14:00"
-  }
+  { "id": 1, "airline": "KLM", "number": "KL100", "price": 120, "duration": 90, "departure": "06:00" },
+  { "id": 2, "airline": "KLM", "number": "KL101", "price": 135, "duration": 100, "departure": "13:00" },
+  { "id": 3, "airline": "Lufthansa", "number": "LH200", "price": 150, "duration": 110, "departure": "18:00" },
+  { "id": 4, "airline": "Lufthansa", "number": "LH201", "price": 140, "duration": 105, "departure": "09:30" },
+  { "id": 5, "airline": "Air France", "number": "AF300", "price": 160, "duration": 95, "departure": "07:45" },
+  { "id": 6, "airline": "Air France", "number": "AF301", "price": 155, "duration": 120, "departure": "20:15" },
+  { "id": 7, "airline": "British Airways", "number": "BA400", "price": 180, "duration": 130, "departure": "11:00" },
+  { "id": 8, "airline": "British Airways", "number": "BA401", "price": 175, "duration": 125, "departure": "17:30" },
+  { "id": 9, "airline": "Emirates", "number": "EK500", "price": 200, "duration": 150, "departure": "22:00" },
+  { "id": 10, "airline": "Emirates", "number": "EK501", "price": 210, "duration": 145, "departure": "05:30" }
 ]

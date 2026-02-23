@@ -2,3 +2,37 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// TODO: remove these overrides and setup theme
+:root {
+  --mdc-protected-button-container-color: #1976d2;
+  --mdc-protected-button-label-text-color: #ffffff;
+  --mdc-theme-on-primary: #ffffff;       /* primary buttons text */
+  --mdc-theme-on-secondary: #000000;     /* secondary buttons text */
+}
+
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.field {
+  flex: 1;
+}
+
+.submit-btn {
+  background-color: #1976d2;
+  color: #fff;
+  font-weight: 600;
+  height: 46px;
+  min-width: 140px;
+  align-self: flex-end; 
+  margin-top: 12px;
+
+
+  &:hover {
+    background-color: #1565c0;
+  }
+}

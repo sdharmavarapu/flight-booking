@@ -1,0 +1,36 @@
+<mat-card class="flight-card">
+
+  <div class="flight-info">
+
+    <div class="airline">
+      {{ flight.airline }}
+    </div>
+
+    <div class="flight-number">
+      Flight {{ flight.number }}
+    </div>
+
+    <div class="meta">
+      <span><mat-icon inline>schedule</mat-icon> {{ flight.duration }} mins</span>
+      <span class="dot"></span>
+      <span><mat-icon inline>flight_takeoff</mat-icon> {{ flight.departure }}</span>
+    </div>
+
+  </div>
+
+  <div class="price-section">
+
+    <div class="price">
+      €{{ flight.price }}
+    </div>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="bookFlight()">
+      Book
+    </button>
+
+  </div>
+
+</mat-card>

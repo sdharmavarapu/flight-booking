@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+.flight-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 14px;
+  transition: 0.18s ease;
+}
+
+.flight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.flight-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.airline {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.flight-number {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Meta row (duration, departure) */
+.meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #555;
+
+  mat-icon {
+    vertical-align: middle;
+    font-size: 16px;
+    margin-right: 4px;
+    color: #1976d2;
+  }
+}
+
+.price-section {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-top: 12px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1976d2;
+  line-height: 1;
+}
+
+button {
+  height: 40px;
+}
