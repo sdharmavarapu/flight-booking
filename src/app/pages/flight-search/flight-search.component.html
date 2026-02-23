@@ -1,1 +1,92 @@
-<p>flight-search works!</p>
+<div class="search-page">
+  <mat-card class="search-card">
+
+    <h2 class="title">Search Flights</h2>
+
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="search-form">
+
+      @if (searchForm.hasError('sameCity') && searchForm.get('source')?.touched && searchForm.get('destination')?.touched) {
+        <div class="form-error">
+           Please make sure departure and arrival city must be different cities.
+        </div>
+      }
+
+      <div class="row">
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Source</mat-label>
+          <input matInput formControlName="source" placeholder="Amsterdam">
+
+          @if (searchForm.get('source')?.hasError('required')) {
+            <mat-error>Source is required</mat-error>
+          }
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Destination</mat-label>
+          <input matInput formControlName="destination" placeholder="London">
+
+          @if (searchForm.get('destination')?.hasError('required')) {
+            <mat-error>Destination is required</mat-error>
+          }
+        </mat-form-field>
+
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Departure Date</mat-label>
+
+          <input
+            matInput
+            [matDatepicker]="departurePicker"
+            formControlName="departureDate"
+          />
+
+          <mat-datepicker-toggle matSuffix [for]="departurePicker"></mat-datepicker-toggle>
+          <mat-datepicker #departurePicker></mat-datepicker>
+
+          @if (searchForm.get('departureDate')?.hasError('required')) {
+            <mat-error>Departure date is required</mat-error>
+          }
+
+        </mat-form-field>
+
+
+        @if (searchForm.get('roundTrip')?.value) {
+          <mat-form-field appearance="outline" class="field">
+            <mat-label>Return Date</mat-label>
+
+            <input
+              matInput
+              [matDatepicker]="returnPicker"
+              formControlName="returnDate"
+            />
+
+            <mat-datepicker-toggle matSuffix [for]="returnPicker"></mat-datepicker-toggle>
+            <mat-datepicker #returnPicker></mat-datepicker>
+          </mat-form-field>
+        }
+
+      </div>
+
+      <div class="options-row">
+        <mat-checkbox formControlName="roundTrip">
+          Round Trip
+        </mat-checkbox>
+      </div>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="submit-btn"
+        type="submit"
+        [disabled]="searchForm.invalid"
+      >
+        Search Flights
+      </button>
+
+    </form>
+
+  </mat-card>
+</div>

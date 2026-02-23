@@ -1,0 +1,36 @@
+/* full viewport center */
+.search-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.search-card {
+  width: 100%;
+  max-width: 680px;
+
+  padding: 28px;
+  border-radius: 18px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.options-row {
+  display: flex;
+  align-items: center;
+}
+
+.form-error {
+  color: #d32f2f;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
