@@ -1,3 +1,21 @@
-.app-container {
-  padding: 16px;
+/* sticky header */
+.app-toolbar {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: #1565c0;
+  color: #fff;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  padding: 24px;
+  height: 64px;
+
+  mat-icon {
+    margin-right: 8px;
+  }
 }
