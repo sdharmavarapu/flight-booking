@@ -49,28 +49,6 @@
           }
 
         </mat-form-field>
-
-
-        @if (searchForm.get('roundTrip')?.value) {
-          <mat-form-field appearance="outline" class="field">
-            <mat-label>Return Date</mat-label>
-
-            <input
-              matInput
-              [matDatepicker]="returnPicker"
-              formControlName="returnDate"
-            />
-
-            <mat-datepicker-toggle matSuffix [for]="returnPicker"></mat-datepicker-toggle>
-            <mat-datepicker #returnPicker></mat-datepicker>
-          </mat-form-field>
-        }
-      </div>
-
-      <div class="options-row">
-        <mat-checkbox formControlName="roundTrip">
-          Round Trip
-        </mat-checkbox>
       </div>
 
       <button

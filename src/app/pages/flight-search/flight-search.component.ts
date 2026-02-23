@@ -37,7 +37,6 @@ export class FlightSearchComponent {
     source: ['', Validators.required],
     destination: ['', Validators.required],
     departureDate: ['', Validators.required],
-    roundTrip: [false],
     returnDate: this.fb.control<string | null>(null)
   },
   {
