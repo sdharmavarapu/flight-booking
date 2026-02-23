@@ -29,7 +29,7 @@
     }
 
     @for (flight of filteredFlights(); track flight.id) {
-      <app-flight-card [flight]="flight" />
+      <app-flight-card [flight]="flight" (book)="bookFlight($event)" />
     }
   </section>
 

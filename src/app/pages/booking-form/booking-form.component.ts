@@ -4,8 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCard } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
-import { BookingStore } from '../../shared/booking.store';
 import { Flight } from '../../shared/models/flight.model';
+import { BookingStore } from '../../shared/services/booking.store';
 
 @Component({
   selector: 'app-booking-form',

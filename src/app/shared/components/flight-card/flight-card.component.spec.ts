@@ -2,21 +2,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { BookingStore } from '../booking.store';
-import { Flight } from '../models/flight.model';
+import { Flight } from '../../models/flight.model';
+import { BookingStore } from '../../services/booking.store';
 import { FlightCardComponent } from './flight-card.component';
 
 describe('FlightCardComponent', () => {
   let component: FlightCardComponent;
   let fixture: ComponentFixture<FlightCardComponent>;
 
-  // Mock Router
   const routerMock = {
     navigate: jasmine.createSpy('navigate')
   };
 
-  // Mock BookingStore
   const storeMock = {
     setFlight: jasmine.createSpy('setFlight')
   };
@@ -41,7 +40,7 @@ describe('FlightCardComponent', () => {
 
     fixture = TestBed.createComponent(FlightCardComponent);
     component = fixture.componentInstance;
-    component.flight = mockFlight;
+    fixture.componentRef.setInput('flight', mockFlight);
     fixture.detectChanges();
   });
 
@@ -49,10 +48,12 @@ describe('FlightCardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set flight in store and navigate on bookFlight()', () => {
-    component.bookFlight();
+  it('should emit book event when Book button is clicked', () => {
+    spyOn(component.book, 'emit');
 
-    expect(storeMock.setFlight).toHaveBeenCalledWith(mockFlight);
-    expect(routerMock.navigate).toHaveBeenCalledWith(['/booking', mockFlight.id]);
+    const button = fixture.debugElement.query(By.css('button'));
+    button.triggerEventHandler('click', null);
+
+    expect(component.book.emit).toHaveBeenCalledOnceWith(mockFlight);
   });
 });

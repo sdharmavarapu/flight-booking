@@ -1,11 +1,13 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { MatOption } from "@angular/material/core";
 import { MatFormField, MatLabel } from "@angular/material/input";
 import { MatSelect } from '@angular/material/select';
+import { Router } from '@angular/router';
 import flightsData from '../../../assets/mock-flights.json';
-import { FilterSidebarComponent } from '../../shared/filter-sidebar/filter-sidebar.component';
-import { FlightCardComponent } from '../../shared/flight-card/flight-card.component';
+import { FilterSidebarComponent } from '../../shared/components/filter-sidebar/filter-sidebar.component';
+import { FlightCardComponent } from '../../shared/components/flight-card/flight-card.component';
 import { Flight, TimeSlot } from '../../shared/models/flight.model';
+import { BookingStore } from '../../shared/services/booking.store';
 
 type SortOption = 'price' | 'duration' | '';
 
@@ -60,6 +62,10 @@ export class FlightResultsComponent {
     return results;
   });
 
+
+  private router = inject(Router);
+  private store = inject(BookingStore);
+
   onFiltersChanged(filters: {
     airlines: string[];
     timeSlots: TimeSlot[];
@@ -70,6 +76,11 @@ export class FlightResultsComponent {
 
   onSortChange(option: SortOption) {
     this.sortOption.set(option);
+  }
+
+  bookFlight(flight: Flight): void {
+    this.store.setFlight(flight);
+    this.router.navigate(['/booking', flight.id]);
   }
 
   getTimeSlot(time: string): TimeSlot {

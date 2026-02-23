@@ -1,23 +1,28 @@
 <div class="sidebar-container">
+
   <div class="filter-card">
-     <h4 class="section-title">Airlines</h4>
+    <div class="section-title">Airlines</div>
+
+    <div class="airline-list">
       @for (airline of airlines(); track airline) {
         <mat-checkbox
-          [checked]="isAirlineSelected(airline)"
+          [checked]="isSelected(airline)"
           (change)="toggleAirline(airline)">
           {{ airline }}
         </mat-checkbox>
       }
+    </div>
+
   </div>
 
   <div class="filter-card">
-     <h4 class="section-title time">Departure Time</h4>
-      @for (slot of timeSlots(); track slot.value) {
-        <mat-checkbox
-          [checked]="isTimeSelected(slot.value)"
-          (change)="toggleTime(slot.value)">
-          {{ slot.label }}
-        </mat-checkbox>
-      }
+    <div class="section-title">Departure Time</div>
+
+    <div class="time-slots">
+      <div class="time-chip">Morning</div>
+      <div class="time-chip">Afternoon</div>
+      <div class="time-chip">Evening</div>
+    </div>
   </div>
+
 </div>

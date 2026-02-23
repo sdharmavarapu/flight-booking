@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
-import { BookingFormData } from './models/booking-form.model';
-import { Flight } from './models/flight.model';
+import { BookingFormData } from '../models/booking-form.model';
+import { Flight } from '../models/flight.model';
 
 @Injectable({ providedIn: 'root' })
 export class BookingStore {

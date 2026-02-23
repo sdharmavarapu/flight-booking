@@ -1,9 +1,15 @@
+:host {
+  display: block;
+}
+
+/* Container */
 .sidebar-container {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
+/* Section title */
 .section-title {
   font-size: 14px;
   font-weight: 600;
@@ -12,11 +18,51 @@
   margin-bottom: 6px;
 }
 
+/* Card look */
 .filter-card {
-  display: flex;
-  flex-direction: column;
   background: white;
   border-radius: 14px;
-  padding: 12px;
+  padding: 14px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Checkbox list */
+.airline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Time slot chips */
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.time-chip {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  transition: 0.15s ease;
+}
+
+.time-chip:hover {
+  background: #e3f2fd;
+  border-color: #90caf9;
+}
+
+.time-chip.active {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+/* Sticky behavior */
+:host {
+  position: sticky;
+  top: 16px;
 }

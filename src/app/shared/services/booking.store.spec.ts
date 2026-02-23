@@ -1,6 +1,6 @@
+import { BookingFormData } from '../models/booking-form.model';
+import { Flight } from '../models/flight.model';
 import { BookingStore } from './booking.store';
-import { BookingFormData } from './models/booking-form.model';
-import { Flight } from './models/flight.model';
 
 describe('BookingStore', () => {
   let store: BookingStore;

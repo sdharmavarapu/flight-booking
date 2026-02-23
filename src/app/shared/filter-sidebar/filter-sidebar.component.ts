@@ -1,6 +1,5 @@
 import { Component, input, output, signal } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { TimeSlot } from '../models/flight.model';
 
 @Component({
   selector: 'app-filter-sidebar',
@@ -10,25 +9,17 @@ import { TimeSlot } from '../models/flight.model';
   imports: [MatCheckboxModule]
 })
 export class FilterSidebarComponent {
+
+  // inputs
   airlines = input<string[]>([]);
-  timeSlots = input<{ label: string; value: TimeSlot }[]>([]);
-  
-  filtersChanged = output<{
-    airlines: string[];
-    timeSlots: TimeSlot[];
-  }>();
 
+  // output event
+  filtersChanged = output<string[]>();
+
+  // internal state
   selectedAirlines = signal<string[]>([]);
-  selectedTimeSlots = signal<TimeSlot[]>([]);
 
-  private emitFilters(): void {
-    this.filtersChanged.emit({
-      airlines: this.selectedAirlines(),
-      timeSlots: this.selectedTimeSlots()
-    });
-  }
-
-  toggleAirline(airline: string): void {
+  toggleAirline(airline: string) {
     const current = this.selectedAirlines();
 
     const updated = current.includes(airline)
@@ -37,27 +28,11 @@ export class FilterSidebarComponent {
 
     this.selectedAirlines.set(updated);
 
-    this.emitFilters();
+    // notify parent
+    this.filtersChanged.emit(updated);
   }
 
-  isAirlineSelected(airline: string): boolean {
+  isSelected(airline: string) {
     return this.selectedAirlines().includes(airline);
-  }
-
-
-  toggleTime(slot: TimeSlot): void {
-    const current = this.selectedTimeSlots();
-
-    const updated = current.includes(slot)
-      ? current.filter(t => t !== slot)
-      : [...current, slot];
-
-    this.selectedTimeSlots.set(updated);
-
-    this.emitFilters();
-  }
-
-  isTimeSelected(slot: TimeSlot): boolean {
-    return this.selectedTimeSlots().includes(slot);
   }
 }

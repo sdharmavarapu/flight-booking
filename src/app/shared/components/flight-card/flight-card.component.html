@@ -2,23 +2,23 @@
 
   <div class="flight-info">
     <div class="airline">
-      {{ flight.airline }}
+      {{ flight()?.airline }}
     </div>
 
     <div class="flight-number">
-      Flight {{ flight.number }}
+      Flight {{ flight()?.number }}
     </div>
 
     <div class="flight-time-info">
-      <span><mat-icon inline>schedule</mat-icon> {{ flight.duration }} mins</span>
+      <span><mat-icon inline>schedule</mat-icon> {{ flight()?.duration }} mins</span>
       <span class="dot"></span>
-      <span><mat-icon inline>flight_takeoff</mat-icon> {{ flight.departure }}</span>
+      <span><mat-icon inline>flight_takeoff</mat-icon> {{ flight()?.departure }}</span>
     </div>
   </div>
 
   <div class="price-section">
     <div class="price">
-      €{{ flight.price }}
+      €{{ flight()?.price }}
     </div>
 
     <button
