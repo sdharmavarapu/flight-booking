@@ -1,1 +1,88 @@
-<p>booking-confirmation works!</p>
+<div class="confirmation-page">
+
+  @if (hasData()) {
+
+    <mat-card class="card">
+
+      <div class="header">
+        <mat-icon class="success-icon">check_circle</mat-icon>
+        <h2 class="title">Booking Confirmed</h2>
+      </div>
+
+
+      <div class="ref">
+        Reference ID:
+        <strong>{{ reference() }}</strong>
+      </div>
+
+      <div class="section">
+
+        <h3>Flight Details</h3>
+
+        <div class="row">
+          <span>Airline:</span>
+          <strong>{{ flight()?.airline }}</strong>
+        </div>
+
+        <div class="row">
+          <span>Flight No:</span>
+          <strong>{{ flight()?.number }}</strong>
+        </div>
+
+        <div class="row">
+          <span>Departure:</span>
+          <strong>{{ flight()?.departure }}</strong>
+        </div>
+
+        <div class="row">
+          <span>Duration:</span>
+          <strong>{{ flight()?.duration }} mins</strong>
+        </div>
+
+        <div class="row">
+          <span>Price:</span>
+          <strong>€{{ flight()?.price }}</strong>
+        </div>
+
+      </div>
+
+      <div class="section">
+
+        <h3>Passenger Details</h3>
+
+        <div class="row">
+          <span>Name:</span>
+          <strong>{{ passenger()?.fullName }}</strong>
+        </div>
+
+        <div class="row">
+          <span>Email:</span>
+          <strong>{{ passenger()?.email }}</strong>
+        </div>
+
+        <div class="row">
+          <span>Phone:</span>
+          <strong>{{ passenger()?.phone }}</strong>
+        </div>
+
+      </div>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="cta"
+        (click)="bookAnother()">
+        Book Another Flight
+      </button>
+
+    </mat-card>
+
+  } @else {
+
+    <div class="empty">
+      No booking found
+    </div>
+
+  }
+
+</div>

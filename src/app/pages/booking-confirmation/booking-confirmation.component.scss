@@ -1,0 +1,64 @@
+.confirmation-page {
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+}
+
+.card {
+  width: 520px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.ref {
+  font-size: 18px;
+  color: #1976d2;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.cta {
+  margin-top: 12px;
+  align-self: flex-end;
+}
+
+.empty {
+  font-size: 18px;
+  color: gray;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.success-icon {
+  color: #2e7d32;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.title {
+  margin: 0;
+}
