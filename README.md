@@ -2,6 +2,14 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.20.
 
+## Install Dependencies
+
+```bash
+npm install
+```
+
+Note: If Ng Cli is not globally installed, runrun `npx ng {COMMAND}`. For eample: `npx ng serve`.
+
 ## Development server
 
 To start a local development server, run:
