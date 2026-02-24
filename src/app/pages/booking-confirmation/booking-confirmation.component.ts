@@ -18,11 +18,10 @@ export class BookingConfirmationComponent {
   private router = inject(Router);
 
   readonly flight = this.store.selectedFlight;
-  readonly passenger = this.store.bookingForm;
   readonly reference = this.store.bookingRef;
 
   readonly hasData = computed(() =>
-    !!this.flight() && !!this.passenger() && !!this.reference()
+    !!this.flight() && !!this.reference()
   );
 
   bookAnother(): void {
